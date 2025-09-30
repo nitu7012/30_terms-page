@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botmedia Digital Marketing Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .bot-n-terms-container {
+            padding: 20px 40px;
+            background: #faf5f5;
+        }
+
+        .bot-n-terms-form {
+            border-radius: 8px;
+        }
+
+        .bot-n-terms-input {
+            background: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-size: 0.95rem;
+            width: 100%;
+        }
+
+        .bot-n-terms-input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .bot-n-terms-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            padding: 6px 12px;
+            border-bottom: 2px solid #111;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .bot-n-terms-input-group select {
+            position: relative;
+            z-index: 1050;
+        }
+
+        .bot-n-terms-input {
+            z-index: 100;
+        }
+
+        .bot-n-terms-input-group i {
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        textarea.bot-n-terms-input {
+            min-height: 100px;
+            resize: none;
+        }
+
+        .bot-n-terms-submit {
+            background: #e91e1e;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .bot-n-terms-submit:hover {
+            background: #c41414;
+        }
+
+        .bot-n-terms-submit i {
+            background: #fff;
+            color: #e91e1e;
+            border-radius: 50%;
+            padding: 6px;
+            font-size: 0.9rem;
+        }
+
+        .text-arear-boode {
+            border-bottom: 2px solid #111 !important;
+        }
+
+        .bot-n-terms-img-wrapper {
+            height: 400px;
+            width: 100%;
+        }
+
+        .bot-n-terms-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid bot-n-terms-container mt-4">
+        <div class="row align-items-center">
+
+            <!-- Left Form -->
+            <div class="col-lg-8">
+                <form class="bot-n-terms-form p-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="bot-n-terms-input-group">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" class="bot-n-terms-input" placeholder="Client Full Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bot-n-terms-input-group">
+                                <img src="https://flagcdn.com/w20/in.png" alt="IN"> <!-- India flag -->
+                                <input type="text" class="bot-n-terms-input" placeholder="Enter Num">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="bot-n-terms-input-group">
+                                <i class="fa-solid fa-building"></i>
+                                <select class="bot-n-terms-input">
+                                    <option>Project/Service Type</option>
+                                    <option>SEO</option>
+                                    <option>Social Media</option>
+                                    <option>Advertising</option>
+                                    <option>Marketing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bot-n-terms-input-group">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" class="bot-n-terms-input" placeholder="Email Address">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="bot-n-terms-input-group">
+                                <i class="fa-solid fa-qrcode"></i>
+                                <input type="text" class="bot-n-terms-input" placeholder="Company/Brand Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bot-n-terms-input-group">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" class="bot-n-terms-input" placeholder="Project/Service Type">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <textarea class="bot-n-terms-input text-arear-boode"
+                                placeholder="Write here msg...........for Additional Requirements...."></textarea>
+                        </div>
+
+                        <div class="col-12 text-center mt-3">
+                            <button type="submit" class="bot-n-terms-submit">
+                                Submit <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right Image -->
+            <div class="col-lg-4 text-center">
+                <div class="bot-n-terms-img-wrapper">
+                    <img src="./assests/img/login-img.png" alt="Form Illustration" class="bot-n-terms-img">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

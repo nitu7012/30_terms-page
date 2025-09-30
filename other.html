@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agreement Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #fafafa;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Sidebar */
+    .bot-n-other-sidebar {
+      background: #fdf6f6;
+      padding: 20px;
+      border: 2px solid #eee;
+      border-radius: 14px;
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+    }
+
+    .bot-n-other-sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bot-n-other-sidebar li {
+      padding: 12px 10px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    .bot-n-other-sidebar li:hover {
+      background: #f1f1f1;
+    }
+
+    .bot-n-other-sidebar li.active {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Content Area */
+    .bot-n-other-content {
+      background: #fff;
+      padding: 40px;
+      border-radius: 14px;
+      border: 1px solid #eee;
+    }
+
+    .bot-n-other-section {
+      padding: 0;
+      margin-bottom: 60px;
+    }
+
+    /* Footer */
+    .bot-n-other-footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .bot-n-other-btn-accept {
+      background: red;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 25px;
+      font-weight: 600;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .bot-n-other-btn-accept:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    .bot-n-other-btn-decline {
+      background: #ddd;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 25px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .bot-n-other-section h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .bot-n-other-section ul li {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container my-4">
+    <div class="row g-4">
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="bot-n-other-sidebar">
+          <ul id="bot-n-other-nav">
+            <li data-target="scope" class="active">1. Scope of Services</li>
+            <li data-target="fees">2. Fees & Payments</li>
+            <li data-target="data">3. Data & Confidentiality</li>
+            <li data-target="communication">4. Communication</li>
+            <li data-target="term">5. Term & Termination</li>
+            <li data-target="warranty">6. Warranties & Limitation of Liability</li>
+            <li data-target="law">7. Governing Law & Jurisdiction</li>
+            <li data-target="entire">8. Entire Agreement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <div class="bot-n-other-content">
+          <div id="scope" class="bot-n-other-section">
+            <h4>1. Scope of Services</h4>
+            <p>Botmedia shall provide digital marketing services to the Client, which may include but are
+              not limited to:</p>
+            <ul>
+              <li>Campaign setup & management (Google Ads, Meta Ads, etc.)</li>
+              <li>Lead generation & delivery via CRM/Google Sheets</li>
+              <li>Daily lead feedback updates in shared Google Sheet</li>
+              <li>Campaign performance reporting</li>
+            </ul>
+          </div>
+
+          <div id="fees" class="bot-n-other-section">
+            <h4>2. Fees & Payments</h4>
+            <ul>
+              <li>The Client shall pay Botmedia a monthly recurring fee, due on or before the 1st of every
+                month (or from the date the work has started).</li>
+              <li>Full payment must be made before work commences.</li>
+              <li>Once payment is made for campaigns, it shall not be refundable under any circumstances.</li>
+              <li>Applicable GST shall be charged in addition to the service fees.</li>
+              <li>Any extra work requested beyond the agreed scope will be charged separately.</li>
+              <li>Client shall request an invoice only after making full payment.</li>
+            </ul>
+          </div>
+
+          <div id="data" class="bot-n-other-section">
+            <h4>3. Data & Confidentiality</h4>
+            <ul>
+              <li>Client’s leads and data shall remain the property of the Client.</li>
+              <li>Botmedia shall not share the Client’s data/leads with any third party, except with the
+                Client (lead owner).</li>
+              <li>Leads shall be shared through CRM and Google Sheets.</li>
+              <li>Data will be stored on the CRM for 30 days only, after which it will be automatically
+                deleted.</li>
+            </ul>
+          </div>
+
+          <div id="communication" class="bot-n-other-section">
+            <h4>4. Communication</h4>
+            <ul>
+              <li>All official communication, approvals, and project details shall be exchanged only via
+                email <a href="mailto:rahul@botmediadigital.in"
+                  class="fw-bold text-decoration-none text-dark">
+                  rahul@botmediadigital.in
+                </a>
+              </li>
+              <li>WhatsApp/phone conversations shall not be considered official unless confirmed by email.</li>
+            </ul>
+          </div>
+
+          <div id="term" class="bot-n-other-section">
+            <h4>5. Term & Termination</h4>
+            <ul>
+              <li>This Agreement shall commence on the date mentioned above and continue on a
+                month-to-month basis until terminated.</li>
+              <li>Either Party may terminate this Agreement by giving 15 days written notice.</li>
+              <li>In the event of termination, fees already paid shall not be refunded.</li>
+            </ul>
+          </div>
+
+          <div id="warranty" class="bot-n-other-section">
+            <h4>6. Warranties & Limitation of Liability</h4>
+            <ul>
+              <li>Botmedia shall use reasonable skill and care in providing services but does not
+                guarantee specific results (e.g., number of leads converted into sales).</li>
+              <li>Botmedia shall not be held liable for indirect, incidental, or consequential damages
+                arising from the campaigns.</li>
+            </ul>
+          </div>
+
+          <div id="law" class="bot-n-other-section">
+            <h4>7. Governing Law & Jurisdiction</h4>
+            <ul>
+              <li>This Agreement shall be governed by the laws of India.</li>
+              <li>Any disputes shall be subject to the exclusive jurisdiction of the courts in Pune,
+                Maharashtra.</li>
+            </ul>
+          </div>
+
+          <div id="entire" class="bot-n-other-section">
+            <h4>8. Entire Agreement</h4>
+            <ul>
+              <p>This document constitutes the entire agreement between the Parties and supersedes any
+                prior discussions, proposals, or understandings.</p>
+              <p>Any modifications shall only be valid if made in writing and signed by both Parties.</p>
+            </ul>
+          </div>
+
+          <!-- Footer -->
+          <div class="bot-n-other-footer">
+            <input type="checkbox" id="bot-n-other-agree">
+            <label for="bot-n-other-agree">
+              I have carefully read and agree to the Digital Marketing Services Agreement.
+            </label>
+            <br><br>
+            <button id="bot-n-other-accept" class="bot-n-other-btn-accept" disabled>Accept & Continue</button>
+            <button id="bot-n-other-decline" class="bot-n-other-btn-decline">Decline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS + Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Sidebar click -> Smooth Scroll with offset
+    document.querySelectorAll('#bot-n-other-nav li').forEach(item => {
+      item.addEventListener('click', () => {
+        const target = document.getElementById(item.dataset.target);
+        const yOffset = -100; // 👈 Header/space ke liye offset
+        const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    });
+
+    // Highlight active section on scroll
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 120; // offset for active state
+      document.querySelectorAll('#bot-n-other-nav li').forEach(link => {
+        let section = document.getElementById(link.dataset.target);
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          document.querySelectorAll('#bot-n-other-nav li').forEach(li => li.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Enable Accept button when checkbox checked
+    const checkbox = document.getElementById("bot-n-other-agree");
+    const acceptBtn = document.getElementById("bot-n-other-accept");
+    checkbox.addEventListener("change", () => {
+      acceptBtn.disabled = !checkbox.checked;
+    });
+
+    // Redirects
+    acceptBtn.addEventListener("click", () => {
+      window.location.href = "thankyou.html";
+    });
+    document.getElementById("bot-n-other-decline").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
