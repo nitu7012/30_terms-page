@@ -15,14 +15,20 @@
     <!-- Inter (variable / regular) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-   <link rel="stylesheet" href="./assests/style/style.css">
+    <link rel="stylesheet" href="./assests/style/style.css">
+    <style>
+        /* Disabled button styling */
+        .bot-n-other-btn-accept:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="container bot-n-terms-container ">
         <div class="row align-items-center">
-
             <!-- Left Content -->
             <div class="col-lg-6">
                 <div class="bot-n-terms-logo mb-4">
@@ -67,13 +73,18 @@
                         <div class="col-md-6">
                             <div class="bot-n-terms-input-group">
                                 <i class="fa-solid fa-building"></i>
-                                <select class="bot-n-terms-input">
-                                    <option>Project/Service Type</option>
+                                <select class="bot-n-terms-input bot-option">
+                                    <option>Service Type</option>
+                                    <option>Digital Marketing</option>
                                     <option>SEO</option>
-                                    <option>Social Media</option>
+                                    <option>Social Media Optimization (SMO)</option>
                                     <option>Advertising</option>
-                                    <option>Marketing</option>
+                                    <option>Email Marketing</option>
+                                    <option>Website Development</option>
+                                    <option>Aerial & Drone Photography</option>
+                                    <option>PR & Branding</option>
                                 </select>
+
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -98,8 +109,9 @@
 
                         <div class="col-12">
                             <textarea class="bot-n-terms-input text-arear-boode"
-                                placeholder="Write here msg...........for Additional Requirements...."></textarea>
+                                placeholder="Optional: Provide any additional requirements or notes relevant to your project."></textarea>
                         </div>
+
 
                         <div class="col-12 text-center mt-3">
                             <button type="submit" class="bot-n-terms-submit">
@@ -253,47 +265,55 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- other -->
     <script>
-        // Sidebar click -> Smooth Scroll with offset
+        // Sidebar click -> Smooth Scroll
         document.querySelectorAll('#bot-n-other-nav li').forEach(item => {
             item.addEventListener('click', () => {
                 const target = document.getElementById(item.dataset.target);
-                const yOffset = -100; 
+                const yOffset = -100;
                 const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
-
                 window.scrollTo({ top: y, behavior: 'smooth' });
             });
         });
 
         // Highlight active section on scroll
         window.addEventListener('scroll', () => {
-            let fromTop = window.scrollY + 120; // offset for active state
+            let fromTop = window.scrollY + 120;
             document.querySelectorAll('#bot-n-other-nav li').forEach(link => {
                 let section = document.getElementById(link.dataset.target);
-                if (
-                    section.offsetTop <= fromTop &&
-                    section.offsetTop + section.offsetHeight > fromTop
-                ) {
+                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
                     document.querySelectorAll('#bot-n-other-nav li').forEach(li => li.classList.remove('active'));
                     link.classList.add('active');
                 }
             });
         });
 
-        // Enable Accept button when checkbox checked
-        const checkbox = document.getElementById("bot-n-other-agree");
+        // Form validation & agreement checkbox
+        const formInputs = document.querySelectorAll('.bot-n-terms-form- input, .bot-n-terms-form- select, .bot-n-terms-form- textarea');
+        const agreementCheckbox = document.getElementById("bot-n-other-agree");
         const acceptBtn = document.getElementById("bot-n-other-accept");
-        checkbox.addEventListener("change", () => {
-            acceptBtn.disabled = !checkbox.checked;
-        });
+
+        function isFormFilled() {
+            for (let input of formInputs) {
+                if (input.type === "checkbox") continue;
+                if (input.value.trim() === "" || (input.tagName === "SELECT" && input.value === "Service Type")) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function toggleAcceptBtn() {
+            acceptBtn.disabled = !(agreementCheckbox.checked && isFormFilled());
+        }
+
+        formInputs.forEach(input => input.addEventListener('input', toggleAcceptBtn));
+        agreementCheckbox.addEventListener('change', toggleAcceptBtn);
 
         // Redirects
-        acceptBtn.addEventListener("click", () => {
-            window.location.href = "thankyou.html";
-        });
-        document.getElementById("bot-n-other-decline").addEventListener("click", () => {
-            window.location.href = "index.html";
-        });
+        acceptBtn.addEventListener("click", () => window.location.href = "thankyou.html");
+        document.getElementById("bot-n-other-decline").addEventListener("click", () => window.location.href = "index.html");
     </script>
+
     <!--  other end-->
 </body>
 
