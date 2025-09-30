@@ -55,7 +55,7 @@
         <div class="row align-items-center">
             <!-- Left Form -->
             <div class="col-lg-8">
-                <form class="bot-n-terms-form- p-3">
+                <form class="bot-n-terms-form">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="bot-n-terms-input-group">
@@ -70,8 +70,8 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="bot-n-terms-input-group">
+                        <div class="col-md-6 col-12">
+                            <div class="bot-n-terms-input-group other-option">
                                 <i class="fa-solid fa-building"></i>
                                 <select class="bot-n-terms-input bot-option">
                                     <option>Service Type</option>
@@ -247,14 +247,20 @@
 
                     <!-- Footer -->
                     <div class="bot-n-other-footer">
-                        <input type="checkbox" id="bot-n-other-agree">
-                        <label for="bot-n-other-agree">
-                            I have carefully read and agree to the Digital Marketing Services Agreement.
-                        </label>
+                        <div class="chekcbot">
+                            <input type="checkbox" id="bot-n-other-agree">
+                            <label for="bot-n-other-agree">
+                                I have carefully read and agree to the Digital Marketing Services Agreement.
+                            </label>
+                        </div>
+
                         <br><br>
-                        <button id="bot-n-other-accept" class="bot-n-other-btn-accept" disabled>Accept &
-                            Continue</button>
-                        <button id="bot-n-other-decline" class="bot-n-other-btn-decline">Decline</button>
+                        <div class="bot-btn">
+                            <button id="bot-n-other-accept" class="bot-n-other-btn-accept" disabled>Accept &
+                                Continue</button>
+                            <button id="bot-n-other-decline" class="bot-n-other-btn-decline">Decline</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -288,30 +294,43 @@
         });
 
         // Form validation & agreement checkbox
-        const formInputs = document.querySelectorAll('.bot-n-terms-form- input, .bot-n-terms-form- select, .bot-n-terms-form- textarea');
+        // Select all inputs, selects, textarea in the form
+        const formInputs = document.querySelectorAll('.bot-n-terms-form input, .bot-n-terms-form select, .bot-n-terms-form textarea');
         const agreementCheckbox = document.getElementById("bot-n-other-agree");
         const acceptBtn = document.getElementById("bot-n-other-accept");
+        const declineBtn = document.getElementById("bot-n-other-decline");
 
+        // Check if all required form fields are filled
         function isFormFilled() {
             for (let input of formInputs) {
-                if (input.type === "checkbox") continue;
-                if (input.value.trim() === "" || (input.tagName === "SELECT" && input.value === "Service Type")) {
-                    return false;
-                }
+                if (input.type === "checkbox") continue; // skip checkbox
+                if (input.tagName === "SELECT" && input.value === "Service Type") return false; // select not chosen
+                if (input.value.trim() === "") return false; // empty input or textarea
             }
             return true;
         }
 
+        // Enable or disable Accept button
         function toggleAcceptBtn() {
             acceptBtn.disabled = !(agreementCheckbox.checked && isFormFilled());
         }
 
+        // Add event listeners
         formInputs.forEach(input => input.addEventListener('input', toggleAcceptBtn));
         agreementCheckbox.addEventListener('change', toggleAcceptBtn);
 
         // Redirects
-        acceptBtn.addEventListener("click", () => window.location.href = "thankyou.html");
-        document.getElementById("bot-n-other-decline").addEventListener("click", () => window.location.href = "index.html");
+        acceptBtn.addEventListener("click", function (e) {
+            e.preventDefault(); // prevent default form submission
+            if (!acceptBtn.disabled) { // only redirect if button is enabled
+                window.location.href = "thankyou.html";
+            }
+        });
+
+        declineBtn.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
     </script>
 
     <!--  other end-->

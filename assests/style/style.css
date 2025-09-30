@@ -8,6 +8,8 @@
 body {
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: #F9FAFB;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .bot-n-terms-logo img {
@@ -123,6 +125,7 @@ body {
     border-bottom: 2px solid #111;
     position: relative;
     z-index: 1000;
+    overflow: hidden;
 }
 
 .bot-n-terms-input-group select {
@@ -293,5 +296,122 @@ textarea.bot-n-terms-input {
 
     .bot-n-terms-img {
         display: none !important;
+    }
+
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
+.chekcbot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.bot-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .chekcbot {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+
+    .chekcbot input[type="checkbox"] {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+    }
+
+    .chekcbot label {
+        font-size: 0.9rem;
+        /* smaller text on mobile */
+        white-space: normal;
+        /* allow text to wrap inside the label */
+        word-break: break-word;
+        text-align: left;
+        /* break long words if needed */
+    }
+}
+
+/* Mobile specific fixes */
+@media (max-width: 767px) {
+
+    .bot-n-terms-img-wrapper,
+    .bot-n-terms-img {
+        display: none !important;
+        /* hide images to prevent overflow */
+    }
+
+    .bot-n-other-btn-accept {
+        margin-bottom: 10px;
+    }
+
+    .bot-n-terms-container-f {
+        padding: 15px 20px;
+        /* reduce padding for smaller screens */
+    }
+
+    .bot-n-terms-input-group {
+        flex-direction: row;
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .bot-n-terms-btn,
+    .bot-n-terms-submit {
+        width: 55%;
+        justify-content: center;
+    }
+
+    .bot-n-terms-container-f,
+    .bot-n-other-content,
+    .bot-n-other-sidebar {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .bot-n-terms-heading {
+        font-size: 1.5rem;
+    }
+
+    .bot-n-other-content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .other-option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 6px 8px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .other-option i {
+        flex: 0 0 auto;
+        font-size: 1rem;
+    }
+
+    .other-option select.bot-option {
+        flex: 1 1 0;
+        width: 50% !important;
+        max-width: 50% !important;
+        min-width: 0 !important;
+        font-size: 0.85rem;
+        padding: 6px 8px;
+        box-sizing: border-box;
+        display: block;
     }
 }
